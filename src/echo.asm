@@ -28,7 +28,7 @@ _start:
 _printstr:
         push rdi
         push rax
-        mov rdi, 0
+        xor rdi, rdi            ;set to 0
 
         _cntloop:
         inc rax

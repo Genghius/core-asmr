@@ -1,5 +1,5 @@
 section .bss
-        buff resb 1
+        buff resb 4096
         buffsize equ $ - buff
 
 section .text
@@ -18,7 +18,7 @@ _open:
         dec rax                 ;decrease argc
         push rax
 
-        mov rax, 2              ;open file
+        mov rax, 2              ;sys_open
         mov rsi, 0
         mov rdx, 0666o
         syscall
@@ -29,19 +29,19 @@ _open:
         push rax
 
 _readwriteloop:
-        mov rax, 0              ;read()
+        mov rax, 0              ;sys_read
         pop rdi
         mov rsi, buff
         mov rdx, buffsize
         syscall
 
         push rdi                ;file descriptor
-        push rax                ;read() return val
+        mov rdx, rax            ;number of bytes read for write call
+        push rax                ;sys_read return val
 
-        mov rax, 1              ;write
+        mov rax, 1              ;sys_write
         mov rdi, 1
         mov rsi, buff
-        mov rdx, buffsize
         syscall
 
         pop rax
