@@ -49,5 +49,5 @@ _end:
         call _printstr
 
         mov rax, 60
-        mov rdi, 0
+        xor rdi, rdi
         syscall

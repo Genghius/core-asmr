@@ -32,5 +32,5 @@ _errend:
 
 _end:
         mov rax, 60
-        mov rdi, 0
+        xor rdi, rdi
         syscall

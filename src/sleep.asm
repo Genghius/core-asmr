@@ -38,7 +38,7 @@ _start:
 
         mov rax, 35     ;nanosleep call
         mov rdi, rsp
-        mov rsi, 0      ;we dont expect this to fail
+        xor rsi, rsi    ;we dont expect this to fail
         syscall
 
         jmp _end
@@ -59,7 +59,7 @@ _parsetime:
         jne _ret
 
         mov rdi, rax
-        mov rax, 0
+        xor rax, rax
 
         _ret:
         ret
@@ -70,7 +70,7 @@ _parsetime:
 
         xor rsi, rsi
         mov rdi, rax
-        mov rax, 0
+        xor rax, rax
 
         jmp _intloop
 
@@ -97,5 +97,5 @@ _errend:
         
 _end:
         mov rax, 60
-        mov rdi, 0
+        xor rdi, rdi
         syscall

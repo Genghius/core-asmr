@@ -19,7 +19,7 @@ _open:
         push rax
 
         mov rax, 2              ;sys_open
-        mov rsi, 0
+        xor rsi, rsi
         mov rdx, 0666o
         syscall
 
@@ -29,7 +29,7 @@ _open:
         push rax
 
 _readwriteloop:
-        mov rax, 0              ;sys_read
+        xor rax, rax             ;sys_read (0)
         pop rdi
         mov rsi, buff
         mov rdx, buffsize
@@ -66,5 +66,5 @@ _errend:
 
 _end:
         mov rax, 60
-        mov rdi, 0
+        xor rdi, rdi
         syscall

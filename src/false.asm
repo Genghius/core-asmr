@@ -3,5 +3,5 @@ section .text
 
 _start:
         mov rax, 60
-        mov rdi, 0      ;exit 1
+        mov rdi, 1      ;exit 1
         syscall
