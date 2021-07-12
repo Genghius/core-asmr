@@ -19,8 +19,8 @@ _open:
         push rax
 
         mov rax, 2              ;sys_open
-        xor rsi, rsi
-        mov rdx, 0666o
+        xor rsi, rsi            ;O_RDONLY flag = 0
+        mov rdx, 0666o          ;mode does not matter as we are only reading
         syscall
 
         cmp rax, 0

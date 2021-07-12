@@ -11,7 +11,7 @@ _mkdirloop:
         dec rax
         push rax
 
-        mov rax, 83
+        mov rax, 83     ;sys_mkdir
         mov rsi, 0755o
         syscall
 
