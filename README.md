@@ -19,3 +19,13 @@ ld file.o -o file
 ```
 
 And voila! you now have an executable.
+
+#Reducing binary size
+
+The binaries will contain a considerable amount of data that is not needed.
+
+Most of this can be "stripped" like this.
+
+```sh
+strip -R .note -R .comment -R .eh_frame -R .eh_frame_hdr
+```
