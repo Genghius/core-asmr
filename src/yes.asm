@@ -1,10 +1,10 @@
 ;movsb -> move byte at [rsi] to [rdi] and increase both registers
 section .data
-        buffsiz equ 4096
+        buffsiz equ 8192
         yes db "y", 10                  ;"y\n"
 
 section .bss
-        buff resb 4096                  ;big buffer page-aligned, allows faster writing
+        buff resb 8192                  ;big buffer page-aligned, allows faster writing
 
 section .text
         global _start

@@ -26,5 +26,5 @@ _start:
 
 _end:
         mov rax, 60
-        mov rdi, rdi
+        xor rdi, rdi
         syscall
