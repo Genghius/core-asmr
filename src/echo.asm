@@ -26,21 +26,20 @@ _start:
 
 
 _printstr:
-        push rdi
         push rax
-        xor rdi, rdi            ;set to 0
+        xor rdx, rdx
 
-        _cntloop:
-        inc rax
-        inc rdi
-        mov cl, [rax]
-        cmp cl, 0
-        jne _cntloop
+        _strloop:
+        cmp byte [rax + rdx], 0
+        je _strend
+        inc rdx
+        jmp _strloop
+
+        _strend:
+        inc rdx
 
         mov rax, 1
-        mov rdx, rdi
         pop rsi
-        pop rdi
         syscall
         ret
 
@@ -51,3 +50,5 @@ _end:
         mov rax, 60
         xor rdi, rdi
         syscall
+
+_strlen:
