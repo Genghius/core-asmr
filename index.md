@@ -1,37 +1,63 @@
-## Welcome to GitHub Pages
+## Core Assembly-Sneed-Mega-Reeeeeeeeeeeee utilities
 
-You can use the [editor on GitHub](https://github.com/Genghius/core-asmr/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+A GNU inspired set of coreutils written in x86_64 assembly.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### Get compiled binaries for 64-bit linux.
+-[Tarball](https://github.com/Genghius/core-asmr/raw/gh-pages/COREASMR.tar.gz)
+-Individually:
+  -[cat](https://github.com/Genghius/core-asmr/raw/gh-pages/cat)
+  -[chroot](https://github.com/Genghius/core-asmr/raw/gh-pages/echo)
+  -[cp](https://github.com/Genghius/core-asmr/raw/gh-pages/cp)
+  -[du](https://github.com/Genghius/core-asmr/raw/gh-pages/du)
+  -[echo](https://github.com/Genghius/core-asmr/raw/gh-pages/echo)
+  -[false](https://github.com/Genghius/core-asmr/raw/gh-pages/false)
+  -[hostname](https://github.com/Genghius/core-asmr/raw/gh-pages/hostname)
+  -[kill](https://github.com/Genghius/core-asmr/raw/gh-pages/kill)
+  -[link](https://github.com/Genghius/core-asmr/raw/gh-pages/link)
+  -[mkdir](https://github.com/Genghius/core-asmr/raw/gh-pages/mkdir)
+  -[nice](https://github.com/Genghius/core-asmr/raw/gh-pages/nice)
+  -[pwd](https://github.com/Genghius/core-asmr/raw/gh-pages/pwd)
+  -[readlink](https://github.com/Genghius/core-asmr/raw/gh-pages/readlink)
+  -[readn](https://github.com/Genghius/core-asmr/raw/gh-pages/readn)
+  -[rm](https://github.com/Genghius/core-asmr/raw/gh-pages/rm)
+  -[rmdir](https://github.com/Genghius/core-asmr/raw/gh-pages/rmdir)
+  -[sleep](https://github.com/Genghius/core-asmr/raw/gh-pages/sleep)
+  -[stat](https://github.com/Genghius/core-asmr/raw/gh-pages/stat)
+  -[swapoff](https://github.com/Genghius/core-asmr/raw/gh-pages/swapoff)
+  -[swapon](https://github.com/Genghius/core-asmr/raw/gh-pages/swapon)
+  -[symlink](https://github.com/Genghius/core-asmr/raw/gh-pages/symlink)
+  -[tee](https://github.com/Genghius/core-asmr/raw/gh-pages/tee)
+  -[touch](https://github.com/Genghius/core-asmr/raw/gh-pages/touch)
+  -[true](https://github.com/Genghius/core-asmr/raw/gh-pages/true)
+  -[uname](https://github.com/Genghius/core-asmr/raw/gh-pages/uname)
+  -[unlink](https://github.com/Genghius/core-asmr/raw/gh-pages/unlink)
+  -[yes](https://github.com/Genghius/core-asmr/raw/gh-pages/yes)
 
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Genghius/core-asmr/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+### Get manpages
+  -[cat](https://github.com/Genghius/core-asmr/raw/gh-pages/cat.1)
+  -[chroot](https://github.com/Genghius/core-asmr/raw/gh-pages/echo.1)
+  -[cp](https://github.com/Genghius/core-asmr/raw/gh-pages/cp.1)
+  -[du](https://github.com/Genghius/core-asmr/raw/gh-pages/du.1)
+  -[echo](https://github.com/Genghius/core-asmr/raw/gh-pages/echo.1)
+  -[false](https://github.com/Genghius/core-asmr/raw/gh-pages/false.1)
+  -[hostname](https://github.com/Genghius/core-asmr/raw/gh-pages/hostname.1)
+  -[kill](https://github.com/Genghius/core-asmr/raw/gh-pages/kill.1)
+  -[link](https://github.com/Genghius/core-asmr/raw/gh-pages/link.1)
+  -[mkdir](https://github.com/Genghius/core-asmr/raw/gh-pages/mkdir.1)
+  -[nice](https://github.com/Genghius/core-asmr/raw/gh-pages/nice.1)
+  -[pwd](https://github.com/Genghius/core-asmr/raw/gh-pages/pwd.1)
+  -[readlink](https://github.com/Genghius/core-asmr/raw/gh-pages/readlink.1)
+  -[readn](https://github.com/Genghius/core-asmr/raw/gh-pages/readn.1)
+  -[rm](https://github.com/Genghius/core-asmr/raw/gh-pages/rm.1)
+  -[rmdir](https://github.com/Genghius/core-asmr/raw/gh-pages/rmdir.1)
+  -[sleep](https://github.com/Genghius/core-asmr/raw/gh-pages/sleep.1)
+  -[stat](https://github.com/Genghius/core-asmr/raw/gh-pages/stat.1)
+  -[swapoff](https://github.com/Genghius/core-asmr/raw/gh-pages/swapoff.1)
+  -[swapon](https://github.com/Genghius/core-asmr/raw/gh-pages/swapon.1)
+  -[symlink](https://github.com/Genghius/core-asmr/raw/gh-pages/symlink.1)
+  -[tee](https://github.com/Genghius/core-asmr/raw/gh-pages/tee.1)
+  -[touch](https://github.com/Genghius/core-asmr/raw/gh-pages/touch.1)
+  -[true](https://github.com/Genghius/core-asmr/raw/gh-pages/true.1)
+  -[uname](https://github.com/Genghius/core-asmr/raw/gh-pages/uname.1)
+  -[unlink](https://github.com/Genghius/core-asmr/raw/gh-pages/unlink.1)
+  -[yes](https://github.com/Genghius/core-asmr/raw/gh-pages/yes.1)
