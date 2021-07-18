@@ -1,0 +1,21 @@
+.TH NICE "1" "ASMR Coreutils" "User Commands"
+.SH NAME
+nice \- set the nice value of a running process
+.SH SYNOPSIS
+.B nice
+[\fI\,priority\/\fR] [\fI\,PID\/\fR]
+.SH DESCRIPTION
+.PP
+Adjust niceness of process, which affects scheduling.
+Niceness values range from
+\fB\-20\fR (most favorable to the process) to 19 (least favorable to the process).
+.PP
+NOTE: your shell may have its own version of nice, which usually supersedes
+the version described here.  Please refer to your shell's documentation
+for details about the options it supports.
+.SH AUTHOR
+Written by Dan Ahriman von Asteras
+.SH "REPORTING BUGS"
+Create an issue at the github page: <https://github.com/Genghius/core-asmr>
+.SH "SEE ALSO"
+nice(2)

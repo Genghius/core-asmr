@@ -1,0 +1,20 @@
+.TH KILL "1" "ASMR Coreutils" "User Commands"
+.SH "NAME"
+kill \- terminate a process
+.SH "SYNOPSIS"
+.sp
+\fBkill\fP [\fIsignal\fP] [\fIPID\fP]
+.SH "DESCRIPTION"
+.sp
+The command \fBkill\fP sends the specified \fIsignal\fP to the specified processes.
+.sp
+If no signal is specified, the TERM signal is sent. The default action for this signal is to terminate the process. This signal should be used in preference to the KILL signal (number 9), since a process may install a handler for the TERM signal in order to perform clean\-up steps before terminating in an orderly fashion. If a process does not terminate after a TERM signal has been sent, then the KILL signal may be used; be aware that the latter signal cannot be caught, and so does not give the target process the opportunity to perform any clean\-up before terminating.
+.sp
+Most modern shells have a builtin \fBkill\fP command, with a usage rather similar to that of the command described here.
+.SH "EXIT STATUS"
+.sp
+\fBkill\fP exits with success status even if it failed.
+.SH AUTHOR
+Written by Dan Ahriman von Asteras
+.SH "REPORTING BUGS"
+Create an issue at the github page: <https://github.com/Genghius/core-asmr>
