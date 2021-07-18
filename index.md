@@ -2,7 +2,7 @@
 
 A GNU inspired set of coreutils written in x86_64 assembly.
 
-### Get compiled binaries for 64-bit linux.
+### Get assembled binaries for 64-bit linux.
 - [Tarball](https://github.com/Genghius/core-asmr/raw/gh-pages/COREASMR.tar.gz)
 - Individually:
   - [cat](https://github.com/Genghius/core-asmr/raw/gh-pages/cat)
