@@ -1,43 +1,26 @@
 section .data
-        ostype db "/proc/sys/kernel/ostype", 0
-        bufsiz equ 64
+        newline db 10, 0
 
 section .bss
-        buff resb 64
+        uname resq 6
 
 section .text
         global _start
 
 _start:
-        mov rax, 2              ;sys_open
-        mov rdi, ostype
-        mov rdx, 0666o          ;mode does not matter as we are only reading
+        mov rax, 63     ;sys_uname
+        mov rdi, uname
         syscall
 
-        cmp rax, 0              ;check if there was an error
-        jl _errend
+        cmp rax, 0      ;check error
+        jne _errend
 
-        push rax                ;store file descriptor
+        mov rax, uname  ;this struct contains much more than just the osname.
+        mov rdi, 1      ;However, i do not care enough. so im just printing this.
+        call _printstr
 
-        xor rax, rax            ;sys_read (0)
-        pop rdi
-        mov rsi, buff
-        mov rdx, bufsiz
-        syscall
-
-        push rdi                ;store file descriptor
-
-        mov rsi, buff
-        call _strlen            ;getlen
-
-        mov rax, 1              ;sys_write
-        mov rdi, 1
-        mov rsi, buff
-        syscall
-
-        mov rax, 3              ;sys_close
-        pop rdi
-        syscall
+        mov rax, newline
+        call _printstr
 
         jmp _end
 
@@ -51,13 +34,20 @@ _end:
         xor rdi, rdi
         syscall
 
-_strlen:
+_printstr:
+        push rax
+        xor rdx, rdx
+
         _strloop:
-        cmp byte [rsi + rdx], 0
+        cmp byte [rax + rdx], 0
         je _strend
         inc rdx
         jmp _strloop
 
         _strend:
         inc rdx
+
+        mov rax, 1
+        pop rsi
+        syscall
         ret
