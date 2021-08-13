@@ -10,7 +10,7 @@ _start:
         pop rdi                 ;|
         cmp rax, 1              ;check atleast 1 arg
         jg _open
-        push 1                  ;stdin if no arg
+        push 0                  ;stdin if no arg
         jmp _readwriteloop
 
 _open:
