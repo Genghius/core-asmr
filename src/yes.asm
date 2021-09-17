@@ -2,6 +2,7 @@
 section .data
         buffsiz equ 8192
         yes db "y", 10                  ;"y\n"
+        space db " "
 
 section .bss
         buff resb 8192                  ;big buffer page-aligned, allows faster writing
@@ -21,33 +22,31 @@ _start:
         pop rsi
         cmp rax, 1                      ;check if there still are args
         dec rax
-        jle _yes
+        jle _main
 
         call _strlen
         add rbx, rcx                    ;rbx counts total string lenght
         rep movsb
 
-        mov rsi, yes + 1
+        mov rsi, space
         movsb
         inc rbx
 
         jmp _argloop
 
 _yes:
-        cmp rbx, 0
-        jne _main
-
         mov rbx, 2
 
-        mov rsi, yes                    ;load "y\n" if no argument given
-        movsb
+        mov rsi, yes                    ;load "y" if no argument given
         movsb
 
 _main:
-        mov rax, buffsiz
-        div rbx
-        sub rax, rbx
-        mov rcx, rax
+        mov rsi, yes + 1                ;load "\n" at the end of string
+        movsb
+
+        mov rcx, buffsiz
+        sub rcx, rbx
+        add rdi, rbx
 
         mov rsi, buff
 
@@ -71,5 +70,4 @@ _strlen:
         jmp _strloop
 
         _strend:
-        inc rcx
         ret
